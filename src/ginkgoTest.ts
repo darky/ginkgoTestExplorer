@@ -171,7 +171,8 @@ export class GinkgoTest {
             program: document?.fileName,
             env: this.testEnvVars || constants.defaultTestEnvVars,
             envFile: this.testEnvFile || constants.defaultTestEnvFile,
-            args: debugArgs
+            args: debugArgs,
+            buildFlags: "--tags=test"
         };
         let workspaceFolder = this.workspaceFolder;
         if (document) {
