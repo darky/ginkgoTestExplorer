@@ -115,7 +115,7 @@ export class GinkgoTest {
                 ? `-cover -coverpkg=./... -coverprofile=${coverageDir}/${coverageOut}`
                 : `-coverpkg=./... -coverprofile=./${coverageFolder}/${coverageOut}`
             : '';
-        const command = `${this.ginkgoPath} ${report} ${focus} ${cover} -r`;
+        const command = `${this.ginkgoPath} -tags test ${report} ${focus} ${cover} -r`;
         let testResults: TestResult[] = [];
         if (this.executeCommandsOn === 'onTerminal') {
             let activeTerminal = vscode.window.terminals.find(t => t.name === gteBash);
